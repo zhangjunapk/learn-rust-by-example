@@ -12,5 +12,11 @@ fn main() {
     // result_alias::main();
     // early_returns::main();
     //result_q_mark::main();
-    multiple_error_type::main();
+    // multiple_error_type::main();
+    option_result::main();
+    define_error_type::main();
+    define_error_type_using_box::main();
+    option_result_q_mark::main();
+    error_wrap::main();
+    iter_result::main();
 }

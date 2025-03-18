@@ -18,6 +18,11 @@ pub mod early_returns;
 pub mod result_q_mark;
 pub mod multiple_error_type;
 pub mod option_result;
+pub mod define_error_type;
+pub mod define_error_type_using_box;
+pub mod option_result_q_mark;
+pub mod error_wrap;
+pub mod iter_result;
 
 #[cfg(test)]
 mod tests {
