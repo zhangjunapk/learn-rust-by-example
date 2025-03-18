@@ -1,0 +1,300 @@
+// WARNING: This output format is intended for human consumers only
+// and is subject to change without notice. Knock yourself out.
+fn main() -> () {
+    let mut _0: ();
+    let _1: std::string::String;
+    let mut _3: &std::string::String;
+    let _4: ();
+    let mut _5: &{closure@capture.rs:3:17: 3:19};
+    let mut _6: ();
+    let _8: ();
+    let mut _9: &{closure@capture.rs:3:17: 3:19};
+    let mut _10: ();
+    let mut _14: &mut i32;
+    let _15: ();
+    let mut _16: &mut {closure@capture.rs:14:19: 14:21};
+    let mut _17: ();
+    let mut _18: bool;
+    scope 1 {
+        debug color => _1;
+        let _2: {closure@capture.rs:3:17: 3:19};
+        scope 2 {
+            debug print => _2;
+            let _7: &std::string::String;
+            scope 3 {
+                debug _reborrow => _7;
+                let _11: std::string::String;
+                scope 4 {
+                    debug _color_moved => _11;
+                    let mut _12: i32;
+                    scope 5 {
+                        debug count => _12;
+                        let mut _13: {closure@capture.rs:14:19: 14:21};
+                        scope 6 {
+                            debug inc => _13;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        _18 = const false;
+        StorageLive(_1);
+        _18 = const true;
+        _1 = <String as From<&str>>::from(const "green") -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        StorageLive(_2);
+        StorageLive(_3);
+        _3 = &_1;
+        _2 = {closure@capture.rs:3:17: 3:19} { color: move _3 };
+        StorageDead(_3);
+        StorageLive(_4);
+        StorageLive(_5);
+        _5 = &_2;
+        StorageLive(_6);
+        _6 = ();
+        _4 = <{closure@capture.rs:3:17: 3:19} as Fn<()>>::call(move _5, move _6) -> [return: bb2, unwind: bb9];
+    }
+
+    bb2: {
+        StorageDead(_6);
+        StorageDead(_5);
+        StorageDead(_4);
+        StorageLive(_7);
+        _7 = &_1;
+        StorageLive(_8);
+        StorageLive(_9);
+        _9 = &_2;
+        StorageLive(_10);
+        _10 = ();
+        _8 = <{closure@capture.rs:3:17: 3:19} as Fn<()>>::call(move _9, move _10) -> [return: bb3, unwind: bb9];
+    }
+
+    bb3: {
+        StorageDead(_10);
+        StorageDead(_9);
+        StorageDead(_8);
+        StorageLive(_11);
+        _18 = const false;
+        _11 = move _1;
+        StorageLive(_12);
+        _12 = const 0_i32;
+        StorageLive(_13);
+        StorageLive(_14);
+        _14 = &mut _12;
+        _13 = {closure@capture.rs:14:19: 14:21} { count: move _14 };
+        StorageDead(_14);
+        StorageLive(_15);
+        StorageLive(_16);
+        _16 = &mut _13;
+        StorageLive(_17);
+        _17 = ();
+        _15 = <{closure@capture.rs:14:19: 14:21} as FnMut<()>>::call_mut(move _16, move _17) -> [return: bb4, unwind: bb6];
+    }
+
+    bb4: {
+        StorageDead(_17);
+        StorageDead(_16);
+        StorageDead(_15);
+        _0 = const ();
+        StorageDead(_13);
+        StorageDead(_12);
+        drop(_11) -> [return: bb5, unwind: bb9];
+    }
+
+    bb5: {
+        StorageDead(_11);
+        StorageDead(_7);
+        StorageDead(_2);
+        _18 = const false;
+        StorageDead(_1);
+        return;
+    }
+
+    bb6 (cleanup): {
+        drop(_11) -> [return: bb9, unwind terminate(cleanup)];
+    }
+
+    bb7 (cleanup): {
+        resume;
+    }
+
+    bb8 (cleanup): {
+        drop(_1) -> [return: bb7, unwind terminate(cleanup)];
+    }
+
+    bb9 (cleanup): {
+        switchInt(copy _18) -> [0: bb7, otherwise: bb8];
+    }
+}
+
+fn main::{closure#0}(_1: &{closure@capture.rs:3:17: 3:19}) -> () {
+    debug color => (*((*_1).0: &std::string::String));
+    let mut _0: ();
+    let _2: ();
+    let mut _3: std::fmt::Arguments<'_>;
+    let mut _4: &[&str; 2];
+    let _5: &[&str; 2];
+    let _6: [&str; 2];
+    let mut _7: &[core::fmt::rt::Argument<'_>; 1];
+    let _8: &[core::fmt::rt::Argument<'_>; 1];
+    let _9: [core::fmt::rt::Argument<'_>; 1];
+    let mut _10: core::fmt::rt::Argument<'_>;
+    let mut _11: &std::string::String;
+    let _12: &std::string::String;
+    let mut _13: &[&str; 2];
+    let mut _14: &std::string::String;
+
+    bb0: {
+        StorageLive(_2);
+        StorageLive(_3);
+        StorageLive(_4);
+        StorageLive(_5);
+        _13 = const main::{closure#0}::promoted[0];
+        _5 = &(*_13);
+        _4 = &(*_5);
+        StorageLive(_7);
+        StorageLive(_8);
+        StorageLive(_9);
+        StorageLive(_10);
+        StorageLive(_11);
+        StorageLive(_12);
+        _14 = deref_copy ((*_1).0: &std::string::String);
+        _12 = &(*_14);
+        _11 = &(*_12);
+        _10 = core::fmt::rt::Argument::<'_>::new_display::<String>(move _11) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        StorageDead(_11);
+        _9 = [move _10];
+        StorageDead(_10);
+        _8 = &_9;
+        _7 = &(*_8);
+        _3 = Arguments::<'_>::new_v1::<2, 1>(move _4, move _7) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        StorageDead(_7);
+        StorageDead(_4);
+        _2 = _print(move _3) -> [return: bb3, unwind continue];
+    }
+
+    bb3: {
+        StorageDead(_3);
+        StorageDead(_12);
+        StorageDead(_9);
+        StorageDead(_8);
+        StorageDead(_5);
+        StorageDead(_2);
+        _0 = const ();
+        return;
+    }
+}
+
+const main::{closure#0}::promoted[0]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+fn main::{closure#1}(_1: &mut {closure@capture.rs:14:19: 14:21}) -> () {
+    debug count => (*((*_1).0: &mut i32));
+    let mut _0: ();
+    let mut _2: (i32, bool);
+    let _3: ();
+    let _4: ();
+    let mut _5: std::fmt::Arguments<'_>;
+    let mut _6: &[&str; 2];
+    let _7: &[&str; 2];
+    let _8: [&str; 2];
+    let mut _9: &[core::fmt::rt::Argument<'_>; 1];
+    let _10: &[core::fmt::rt::Argument<'_>; 1];
+    let _11: [core::fmt::rt::Argument<'_>; 1];
+    let mut _12: core::fmt::rt::Argument<'_>;
+    let mut _13: &i32;
+    let _14: &i32;
+    let mut _15: &[&str; 2];
+    let mut _16: &mut i32;
+    let mut _17: &mut i32;
+    let mut _18: &mut i32;
+    let mut _19: &mut i32;
+
+    bb0: {
+        _16 = deref_copy ((*_1).0: &mut i32);
+        _2 = AddWithOverflow(copy (*_16), const 1_i32);
+        _17 = deref_copy ((*_1).0: &mut i32);
+        assert(!move (_2.1: bool), "attempt to compute `{} + {}`, which would overflow", copy (*_17), const 1_i32) -> [success: bb1, unwind continue];
+    }
+
+    bb1: {
+        _18 = deref_copy ((*_1).0: &mut i32);
+        (*_18) = move (_2.0: i32);
+        StorageLive(_3);
+        StorageLive(_4);
+        StorageLive(_5);
+        StorageLive(_6);
+        StorageLive(_7);
+        _15 = const main::{closure#1}::promoted[0];
+        _7 = &(*_15);
+        _6 = &(*_7);
+        StorageLive(_9);
+        StorageLive(_10);
+        StorageLive(_11);
+        StorageLive(_12);
+        StorageLive(_13);
+        StorageLive(_14);
+        _19 = deref_copy ((*_1).0: &mut i32);
+        _14 = &(*_19);
+        _13 = &(*_14);
+        _12 = core::fmt::rt::Argument::<'_>::new_display::<i32>(move _13) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        StorageDead(_13);
+        _11 = [move _12];
+        StorageDead(_12);
+        _10 = &_11;
+        _9 = &(*_10);
+        _5 = Arguments::<'_>::new_v1::<2, 1>(move _6, move _9) -> [return: bb3, unwind continue];
+    }
+
+    bb3: {
+        StorageDead(_9);
+        StorageDead(_6);
+        _4 = _print(move _5) -> [return: bb4, unwind continue];
+    }
+
+    bb4: {
+        StorageDead(_5);
+        StorageDead(_14);
+        StorageDead(_11);
+        StorageDead(_10);
+        StorageDead(_7);
+        StorageDead(_4);
+        _3 = const ();
+        StorageDead(_3);
+        _0 = const ();
+        return;
+    }
+}
+
+const main::{closure#1}::promoted[0]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}

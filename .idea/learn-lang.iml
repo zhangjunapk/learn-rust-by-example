@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/helloworld/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/rawtype/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/custom_type/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/practice1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/practice2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/types/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/variable_bindings/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/conversion/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/expression/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/flow_control/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/function/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/model/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/attribute/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bar/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/crates/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/foo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/foo/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/generics/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/scope/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/practice3/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/practice4/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/traits/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/macros/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/error/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/helloworld/target" />
+      <excludeFolder url="file://$MODULE_DIR$/rawtype/target" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/custom_type/target" />
+      <excludeFolder url="file://$MODULE_DIR$/practice1/target" />
+      <excludeFolder url="file://$MODULE_DIR$/practice2/target" />
+      <excludeFolder url="file://$MODULE_DIR$/types/target" />
+      <excludeFolder url="file://$MODULE_DIR$/variable_bindings/target" />
+      <excludeFolder url="file://$MODULE_DIR$/conversion/target" />
+      <excludeFolder url="file://$MODULE_DIR$/expression/target" />
+      <excludeFolder url="file://$MODULE_DIR$/flow_control/target" />
+      <excludeFolder url="file://$MODULE_DIR$/function/target" />
+      <excludeFolder url="file://$MODULE_DIR$/model/target" />
+      <excludeFolder url="file://$MODULE_DIR$/attribute/target" />
+      <excludeFolder url="file://$MODULE_DIR$/bar/target" />
+      <excludeFolder url="file://$MODULE_DIR$/crates/target" />
+      <excludeFolder url="file://$MODULE_DIR$/foo/target" />
+      <excludeFolder url="file://$MODULE_DIR$/generics/target" />
+      <excludeFolder url="file://$MODULE_DIR$/scope/target" />
+      <excludeFolder url="file://$MODULE_DIR$/practice3/target" />
+      <excludeFolder url="file://$MODULE_DIR$/practice4/target" />
+      <excludeFolder url="file://$MODULE_DIR$/traits/target" />
+      <excludeFolder url="file://$MODULE_DIR$/macros/target" />
+      <excludeFolder url="file://$MODULE_DIR$/error/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

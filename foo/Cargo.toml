@@ -1,0 +1,11 @@
+[package]
+name = "foo"
+version = "0.1.0"
+edition = "2024"
+authors = ['ZhangJun']
+build="build.rs"
+
+[dependencies]
+clap = "2.34.0"
+rand = { git = "https://github.com/rust-lang-nursery/rand" }
+bar = { path = "../bar" }
