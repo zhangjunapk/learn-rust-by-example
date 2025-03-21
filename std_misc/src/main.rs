@@ -9,6 +9,9 @@ fn main() {
     file_create::main();
     file_read_lines::main();
     // process::main();
-    pipe::main();
-    wait::main();
+    // pipe::main();
+    // wait::main();
+    // fs_example::main();
+    args::main();
+    ffi::main();
 }
