@@ -27,6 +27,12 @@
       <sourceFolder url="file://$MODULE_DIR$/traits/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/macros/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/error/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/std/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/std_example/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/std_misc/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit_test/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/unit_test/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/unsafe_example/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/helloworld/target" />
       <excludeFolder url="file://$MODULE_DIR$/rawtype/target" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
@@ -51,6 +57,11 @@
       <excludeFolder url="file://$MODULE_DIR$/traits/target" />
       <excludeFolder url="file://$MODULE_DIR$/macros/target" />
       <excludeFolder url="file://$MODULE_DIR$/error/target" />
+      <excludeFolder url="file://$MODULE_DIR$/std/target" />
+      <excludeFolder url="file://$MODULE_DIR$/std_example/target" />
+      <excludeFolder url="file://$MODULE_DIR$/std_misc/target" />
+      <excludeFolder url="file://$MODULE_DIR$/unit_test/target" />
+      <excludeFolder url="file://$MODULE_DIR$/unsafe_example/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
