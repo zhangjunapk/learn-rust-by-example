@@ -12,6 +12,13 @@ pub fn main() {
     inlateout();
     // operate();
     mul(10, 20);
+    un_damage();
+    temp_register();
+    call_using_asm();
+    hl();
+    load_fpu(10);
+    control_flow();
+    option();
 }
 
 fn out() {
@@ -119,4 +126,130 @@ fn mul(a: u64, b: u64) -> u128 {
     }
     println!("lo:{lo},hi:{hi}");
     ((hi as u128) << 64) + lo as u128
+}
+
+/**
+Genu
+ineI
+ntel
+*/
+fn un_damage() {
+    let mut name_buf = [0_u8; 16];
+
+    unsafe {
+        //这里ebx是保留寄存器，
+        //在64位下，不能直接对ebx进行push pop
+        //需要对64位寄存器rbx进行push pop，来保存ebx
+        //来达到不破坏ebx保留寄存器的目的
+        asm!(
+        "push rbx",
+        "cpuid",
+        "mov [rdi],eax",
+        "mov [rdi +4],ebx",
+        "mov [rdi +8],edx",
+        "mov [rdi +12],ecx",
+        "pop rbx",
+        in("rdi") name_buf.as_mut_ptr(),
+        inout("eax") 0=>_,
+        out("ecx") _,
+        out("edx") _,
+        )
+    }
+    let name = core::str::from_utf8(&name_buf).unwrap();
+    println!("cpu制造商id:{name}");
+}
+
+fn temp_register() {
+    let mut x: u64 = 4;
+    unsafe {
+        asm!(
+        //x赋值给tmp
+        "mov {tmp},{x}",
+        //tmp左移1位
+        //100
+        //1000
+        //8 十进制
+        "shl {tmp},1",
+        //x左移2位
+        //100
+        //10000
+        //16 十进制
+        "shl {x},2",
+        //tmp加到x
+        //8+16 =24
+        "add {x},{tmp}",
+        x=inout(reg) x,
+        tmp=out(reg) _
+        )
+    }
+    //x=24
+    println!("x:{x}");
+}
+
+extern "C" fn foo(arg: i32) -> i32 {
+    println!("foo");
+    arg * 2
+}
+
+fn call_using_asm() {
+    let arg = 6;
+    unsafe {
+        let result: i32;
+        asm!(
+        "call {}",
+        in(reg) foo,
+        in("rdi") arg,
+        out("rax") result,
+            //这个关键字会告诉rust编译器，根据调用定义，来推断出哪些寄存器会被修改
+            //让其调用前保存值，之后恢复值，来达到不影响其他程序操作寄存器的目的
+        clobber_abi("C")
+        );
+        println!("调用asm后:{}", result);
+    }
+}
+
+fn hl() {
+    let mut x: u16 = 0x00ab;
+    unsafe {
+        //将x的值，低位复制到高位
+        //0xabab
+        asm!("mov {0:h}, {0:l}",inout(reg_abcd) x);
+    }
+    println!("0x{:x}", x);
+}
+
+fn load_fpu(control: u16) {
+    unsafe {
+        asm!("fldcw [{}]",in(reg) &control,options(nostack));
+    }
+}
+
+fn control_flow() {
+    let mut a = 0;
+    unsafe {
+        asm!("mov {0},10",
+        "2:",
+        "sub {0},1",//向后跳转，继续执行-1操作
+        "cmp {0},3",
+        "jle 2f",//如果a的值小于等于3,那就向前跳转
+        "jmp 2b",//不满足条件，向后跳转
+        "2:",//2f向前跳转到这里，循环结束
+        "add {0},2",//a+2
+        out(reg) a)
+    }
+    println!("a:{a}");
+}
+
+fn option() {
+    let mut a: u64 = 3;
+    let b: u64 = 3;
+    unsafe {
+        asm!("add {0}, {1}",
+        inlateout(reg) a, in(reg)b,
+        //没有可观察的副作用
+        //不会读取写入内存
+        //不会往栈压入数据
+        options(pure,nomem,nostack));
+    }
+    println!("a:{a}")
 }
